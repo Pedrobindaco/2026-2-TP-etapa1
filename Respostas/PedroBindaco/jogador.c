@@ -1,10 +1,23 @@
-#ifndef _JOGADOR_H_
-#define _JOGADOR_H_
+#include "jogador.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_TAM_NOME_JOGADOR 51
 #define MAX_TAM_COR_JOGADOR 16
 
-typedef struct Jogador Jogador;
+struct Jogador{
+    char cor[MAX_TAM_COR_JOGADOR];
+    char nome[MAX_TAM_NOME_JOGADOR];
+    int forca;
+    int xp;
+    int posicao;
+    int ouro;
+    int jogadas;
+    int disputas_vencidas;
+    int monstros_derrotados;
+
+};
 
 /**
  * @brief Aloca dinamicamente um jogador e copia o nome e a cor informados. O jogador inicia no
@@ -15,14 +28,35 @@ typedef struct Jogador Jogador;
  * @param forca Força inicial do jogador
  * @return Ponteiro para o jogador criado
  */
-Jogador *criaJogador(char *nome, char *cor, int forca);
+Jogador *criaJogador(char *nome, char *cor, int forca){
+    Jogador * j = (Jogador *)calloc(1, sizeof(Jogador));
+    strcpy(j->nome, nome);
+    strcpy(j->cor, cor);
+    j->posicao = 0;
+    j->xp = 0;
+    j->ouro = 0;
+    j->jogadas = 0;
+    j->forca = 0;
+    j->disputas_vencidas = 0;
+    j->monstros_derrotados = 0;
+    return j;
+
+}
 
 /**
  * @brief Lê da entrada padrão, nesta ordem e um por linha, o nome, a cor e a força inicial de um
  * jogador (o caractere J já deve ter sido lido) e cria o jogador com criaJogador.
  * @return Ponteiro para o jogador criado
  */
-Jogador *leJogador();
+Jogador *leJogador(){
+    char nome[MAX_TAM_NOME_JOGADOR], cor[MAX_TAM_COR_JOGADOR];
+    int forca;
+    scanf("%[^\n]\n", nome);
+    scanf("%[^\n]\n", cor);
+    scanf("%d\n", forca);
+    Jogador * j = criaJogador(nome, cor, forca);
+    return j;
+}
 
 /**
  * @brief Aloca um novo jogador e copia para ele todos os campos do jogador informado (nome, cor,
