@@ -1,0 +1,48 @@
+/usr/bin/ld: Resultados/PedroBindaco/jogador/acao_monstro.o: in function `executaMonstro':
+acao_monstro.c:(.text+0xda): undefined reference to `obtemForcaJogador'
+/usr/bin/ld: acao_monstro.c:(.text+0xfa): undefined reference to `adicionaXPJogador'
+/usr/bin/ld: acao_monstro.c:(.text+0x106): undefined reference to `incrementaMonstrosDerrotadosJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/celula.o: in function `imprimeCelula':
+celula.c:(.text+0x160): undefined reference to `obtemNomeJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `executaOuro':
+main.c:(.text+0xab): undefined reference to `adicionaOuroJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `executaItem':
+main.c:(.text+0x73c): undefined reference to `obtemOuroJogador'
+/usr/bin/ld: main.c:(.text+0x760): undefined reference to `adicionaOuroJogador'
+/usr/bin/ld: main.c:(.text+0x775): undefined reference to `adicionaForcaJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `chegaNaCasa':
+main.c:(.text+0x847): undefined reference to `venceDisputaJogador'
+/usr/bin/ld: main.c:(.text+0x857): undefined reference to `incrementaDisputasVencidasJogador'
+/usr/bin/ld: main.c:(.text+0x896): undefined reference to `incrementaDisputasVencidasJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `executaJogada':
+main.c:(.text+0x8e3): undefined reference to `incrementaJogadasJogador'
+/usr/bin/ld: main.c:(.text+0x902): undefined reference to `obtemPosicaoJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `obtemVencedorJogo':
+main.c:(.text+0xa6c): undefined reference to `obtemPosicaoJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `imprimeSituacao':
+main.c:(.text+0xb6f): undefined reference to `obtemNomeJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `imprimeEstadoJogo':
+main.c:(.text+0xc1c): undefined reference to `obtemPosicaoJogador'
+/usr/bin/ld: main.c:(.text+0xc2c): undefined reference to `obtemNomeJogador'
+/usr/bin/ld: main.c:(.text+0xca6): undefined reference to `obtemNomeJogador'
+/usr/bin/ld: main.c:(.text+0xcdb): undefined reference to `printEstadoJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `imprimeRankingJogo':
+main.c:(.text+0xd2f): undefined reference to `copiaJogador'
+/usr/bin/ld: main.c:(.text+0xd6e): undefined reference to `comparaOrdJogador'
+/usr/bin/ld: main.c:(.text+0xdae): undefined reference to `printRankingJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `imprimeRelatorioJogo':
+main.c:(.text+0xe37): undefined reference to `obtemJogadasJogador'
+/usr/bin/ld: main.c:(.text+0xe46): undefined reference to `obtemDisputasVencidasJogador'
+/usr/bin/ld: main.c:(.text+0xe55): undefined reference to `obtemMonstrosDerrotadosJogador'
+/usr/bin/ld: main.c:(.text+0xf11): undefined reference to `printRelatorioJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/main.o: in function `main':
+main.c:(.text+0x11f3): undefined reference to `desalocaJogador'
+/usr/bin/ld: main.c:(.text+0x1271): undefined reference to `leJogador'
+/usr/bin/ld: main.c:(.text+0x1287): undefined reference to `obtemNomeJogador'
+/usr/bin/ld: main.c:(.text+0x1298): undefined reference to `comparaNomeJogador'
+/usr/bin/ld: main.c:(.text+0x12b7): undefined reference to `desalocaJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/mapa.o: in function `retiraJogadorMapa':
+mapa.c:(.text+0x1a3): undefined reference to `obtemPosicaoJogador'
+/usr/bin/ld: Resultados/PedroBindaco/jogador/mapa.o: in function `moveJogadorMapa':
+mapa.c:(.text+0x21f): undefined reference to `definePosicaoJogador'
+collect2: error: ld returned 1 exit status
