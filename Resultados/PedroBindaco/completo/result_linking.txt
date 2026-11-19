@@ -4,4 +4,6 @@
 acao_monstro.c:(.text+0xea): undefined reference to `obtemForcaJogador'
 /usr/bin/ld: acao_monstro.c:(.text+0x10c): undefined reference to `adicionaXPJogador'
 /usr/bin/ld: acao_monstro.c:(.text+0x118): undefined reference to `incrementaMonstrosDerrotadosJogador'
+/usr/bin/ld: Resultados/PedroBindaco/completo/celula.o: in function `imprimeCelula':
+celula.c:(.text+0x174): undefined reference to `obtemNomeJogador'
 collect2: error: ld returned 1 exit status

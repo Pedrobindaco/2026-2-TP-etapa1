@@ -1,6 +1,6 @@
-#ifndef _CELULA_H_
-#define _CELULA_H_
-
+#include <stdio.h>
+#include <stdlib.h>
+#include "celula.h"
 #include <limits.h>
 #include "jogador.h"
 
@@ -10,12 +10,19 @@
  * não é um deslocamento fixo: quem trata é o módulo que conduz a partida.
  */
 #define RECUO_CELULA INT_MIN
+#define data_type void *
 
 /**
  * Estrutura de uma Célula do mapa contendo os parâmetros comuns a todas as células e uma ação genérica
  * (OURO, MONSTRO, ITEM, AVANCA, VOLTA, VAZIA...). Cada célula comporta no máximo um jogador.
  */
-typedef struct Celula Celula;
+struct Celula{
+    data_type acao;
+    func_ptr_desaloca desaloca;
+    func_ptr_executa executa;
+    func_ptr_imprime imprime;
+    Jogador * ocupante;
+};
 
 /**
  * @brief Função de callback para executar a ação de uma célula sobre um jogador. A função deve
@@ -48,7 +55,15 @@ typedef void (*func_ptr_desaloca)(void *acao);
  * @param desaloca Função de callback que desaloca a ação
  * @return Uma célula inicializada e desocupada
  */
-Celula *criaCelula(void *acao, func_ptr_executa executa, func_ptr_imprime imprime, func_ptr_desaloca desaloca);
+Celula *criaCelula(void *acao, func_ptr_executa executa, func_ptr_imprime imprime, func_ptr_desaloca desaloca){
+    Celula * c = (Celula *)calloc(1, sizeof(Celula));
+    c->acao = acao;
+    c->executa = executa;
+    c->imprime = imprime;
+    c->desaloca = desaloca;
+    c->ocupante = NULL;
+    return c;
+}
 
 /**
  * @brief Executa a ação da célula sobre o jogador, chamando a função de callback 'executa' da célula
@@ -57,21 +72,28 @@ Celula *criaCelula(void *acao, func_ptr_executa executa, func_ptr_imprime imprim
  * @param j Jogador que parou na célula
  * @return deslocamento resultante ou RECUO_CELULA
  */
-int executaAcaoCelula(Celula *c, Jogador *j);
+int executaAcaoCelula(Celula *c, Jogador *j){
+    int rtn = c->executa(c->acao, j);
+    return rtn;
+}
 
 /**
  * @brief Retorna o ponteiro genérico para a ação armazenada na célula
  * @param c Célula inicializada
  * @return ação genérica da Célula
  */
-void *obtemAcaoCelula(Celula *c);
+void *obtemAcaoCelula(Celula *c){
+    return c->acao;
+}
 
 /**
  * @brief Retorna o jogador que ocupa a célula
  * @param c Célula inicializada
  * @return Jogador ocupante ou NULL se a célula estiver livre
  */
-Jogador *obtemOcupanteCelula(Celula *c);
+Jogador *obtemOcupanteCelula(Celula *c){
+    return c->ocupante;
+}
 
 /**
  * @brief Define o jogador que ocupa a célula. A célula guarda apenas a referência ao jogador
@@ -79,14 +101,21 @@ Jogador *obtemOcupanteCelula(Celula *c);
  * @param c Célula inicializada
  * @param j Jogador ocupante (NULL para liberar a célula)
  */
-void defineOcupanteCelula(Celula *c, Jogador *j);
+void defineOcupanteCelula(Celula *c, Jogador *j){
+    c->ocupante = j;
+}
 
 /**
  * @brief Verifica se existe um jogador ocupando a célula
  * @param c Célula inicializada
  * @return 1 se estiver ocupada, 0 caso contrário
  */
-int estaOcupadaCelula(Celula *c);
+int estaOcupadaCelula(Celula *c){
+    if (c->ocupante == NULL){
+        return 0;
+    }
+    return 1;
+}
 
 /**
  * @brief Imprime uma linha no formato do ESTADO: "[<posicao>] ", depois a ação (usando a função de
@@ -95,13 +124,22 @@ int estaOcupadaCelula(Celula *c);
  * @param c Célula inicializada
  * @param posicao Número da casa da célula no mapa
  */
-void imprimeCelula(Celula *c, int posicao);
+void imprimeCelula(Celula *c, int posicao){
+    printf("[%d] ", posicao);
+    c->imprime(c->acao);
+    if (estaOcupadaCelula(c)){
+        printf(" <- %s", obtemNomeJogador(c->ocupante));
+    }
+    printf("\n");
+}
 
 /**
  * @brief Desaloca a ação da célula (usando a função de callback 'desaloca') e depois a própria célula.
  * O ocupante não é desalocado.
  * @param c Célula a ser liberada
  */
-void desalocaCelula(Celula *c);
+void desalocaCelula(Celula *c){
+    c->desaloca(c->acao);
+    free(c);
+}
 
-#endif // _CELULA_H_
