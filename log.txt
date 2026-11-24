@@ -104,7 +104,7 @@ LINKANDO OS ARQUIVOS COMPILADOS:
  - Arquivo de output gerado: Resultados/PedroBindaco/jogador/result_linking.txt
  - Pasta mapa:
  - Gerando o binário prog linkando com o(s) arquivo(s) mapa/*.o
- - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
  - Arquivo de output gerado: Resultados/PedroBindaco/mapa/result_linking.txt
  - Pasta celula:
  - Gerando o binário prog linkando com o(s) arquivo(s) celula/*.o
@@ -114,7 +114,7 @@ LINKANDO OS ARQUIVOS COMPILADOS:
  - Gerando o binário prog linkando com o(s) arquivo(s) acao_monstro/*.o
  - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
  - Arquivo de output gerado: Resultados/PedroBindaco/acao_monstro/result_linking.txt
- - Arquivos Linkados: Erro! 3 arquivos com erros de linkagem.
+ - Arquivos Linkados: Erro! 2 arquivos com erros de linkagem.
 
 EXECUTANDO O VALGRIND EM CADA CASO:
  - Pasta main / Caso 1:
@@ -254,46 +254,56 @@ EXECUTANDO O VALGRIND EM CADA CASO:
  - Nota para a pasta jogador (máximo 1.5) - 100.00 de 100 - 100.00% de 1.5: 1.50.
  -----
  - Pasta mapa / Caso 1:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 50, frees: 50, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 10:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 50, frees: 50, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 2:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 74, frees: 74, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 3:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 56, frees: 56, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 4:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 57, frees: 57, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 5:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 75, frees: 75, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 6:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 32, frees: 32, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 7:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 16, frees: 16, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 8:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 74, frees: 74, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
  - Pasta mapa / Caso 9:
- - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
- - Resultado para o saida.txt: Incorreto! Peso: 0.0
- - Nota para o Caso (soma dos pesos): 0 (soma total) - 30.0% (desconto do valgrind) = 0 de 10 pontos.
- - Nota para a pasta mapa (máximo 0.5) - 0 de 100 - 0% de 0.5: 0.
+ - Arquivo de output gerado: Resultados/PedroBindaco/mapa/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 205, frees: 205, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta mapa (máximo 0.5) - 100.00 de 100 - 100.00% de 0.5: .50.
  -----
  - Pasta celula / Caso 1:
  - Arquivo de output gerado: Resultados/PedroBindaco/celula/Casos/1/result_valgrind.txt.
@@ -408,7 +418,7 @@ RESULTADOS FINAIS
 Aluno: PedroBindaco
  - Arquivos Esperados Corretos: 8 de 9
  - Pastas Compiladas Corretamente: 5 de 6 
- - Pastas Linkadas Corretamente: 3 de 6
+ - Pastas Linkadas Corretamente: 4 de 6
  - Teste main
  - Resultados corretos: 0 de 10
  - Valgrinds corretos: 0 de 10
@@ -422,9 +432,9 @@ Aluno: PedroBindaco
  - Valgrinds corretos: 10 de 10
  - Nota de PedroBindaco para o teste jogador: 1.50
  - Teste mapa
- - Resultados corretos: 0 de 10
- - Valgrinds corretos: 0 de 10
- - Nota de PedroBindaco para o teste mapa: 0
+ - Resultados corretos: 10 de 10
+ - Valgrinds corretos: 10 de 10
+ - Nota de PedroBindaco para o teste mapa: .50
  - Teste celula
  - Resultados corretos: 10 de 10
  - Valgrinds corretos: 10 de 10
@@ -433,8 +443,8 @@ Aluno: PedroBindaco
  - Resultados corretos: 10 de 10
  - Valgrinds corretos: 10 de 10
  - Nota de PedroBindaco para o teste acao_monstro: .50
- - Nota de PedroBindaco: 0+(1.50)+(.50)+(0)+(0)+(0)+(.50)
- - Nota de PedroBindaco: 2.50
+ - Nota de PedroBindaco: 0+(1.50)+(.50)+(0)+(.50)+(0)+(.50)
+ - Nota de PedroBindaco: 3.00
 
 ----------------------------------------------------------------------------
 
