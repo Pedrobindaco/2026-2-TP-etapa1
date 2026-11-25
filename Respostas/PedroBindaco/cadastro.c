@@ -6,7 +6,6 @@
 #include "acao_volta.h"
 #include "acao_item.h"
 #include "mapa.h"
-#include "celula.h"
 #include "jogador.h"
 #include "vector.h"
 #include <stdio.h>
@@ -45,8 +44,19 @@ char cadastraJogadores(Vector * jogadores){
     char c;
     while (scanf(" %c", &c) == 1){
         if (c != 'J') return c;
-        Jogador * j = leJogador();
-        VectorPushBack(jogadores, j);
+        Jogador * novo = leJogador();
+        int repetido = 0;
+        for(int i = 0; i < VectorSize(jogadores);i++){
+            if (comparaNomeJogador(VectorGet(jogadores, i), obtemNomeJogador(novo))){
+                repetido = 1;
+                break;
+            }
+        }
+        if (repetido){
+            desalocaJogador(novo);
+        } else {
+            VectorPushBack(jogadores, novo);
+        }
     }
     return '\0';
 }

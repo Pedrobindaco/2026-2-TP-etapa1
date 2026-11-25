@@ -14,6 +14,7 @@ struct Vazia{
  */
 Vazia *criaVazia(){
     Vazia * v = (Vazia*)calloc(1, sizeof(Vazia));
+    v->nada = 'a';
     return v;
 }
 

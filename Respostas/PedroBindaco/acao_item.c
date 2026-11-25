@@ -51,7 +51,7 @@ Item *leItem(){
  */
 int executaItem(void *dado, Jogador *j){
     Item * i = (Item*)dado;
-    if(i->preco < obtemOuroJogador(j)){
+    if(i->preco <= obtemOuroJogador(j)){
         adicionaOuroJogador(j, -i->preco);
         adicionaForcaJogador(j, i->bonus);
     }
@@ -65,7 +65,7 @@ int executaItem(void *dado, Jogador *j){
  */
 void imprimeItem(void *dado){
     Item * i = (Item*)dado;
-    printf("ITEM %s %d %d", i->nome, i->preco, i->bonus);
+    printf("ITEM %s (P:%d F:+%d)", i->nome, i->preco, i->bonus);
 }
 
 /**

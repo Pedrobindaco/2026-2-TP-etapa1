@@ -3,6 +3,7 @@
 #include "jogador.h"
 #include "vector.h"
 #include "solicitacao.h"
+#include "rolagem.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,17 +31,19 @@ void desalocaJogo(Jogo * jogo){
 
 void rodaJogo(Jogo * jogo, char proximaAcao){
     if(proximaAcao == 'R'){
-        int n;
+        int qtdRolagens;
         scanf("%*s"); //descarta OLAGEM
-        scanf("%d", &n);
-        //funcao que executa rolagem
+        scanf("%d", &qtdRolagens);
+        executaRolagem(jogo, qtdRolagens);
     } else if (proximaAcao == 'E'){
         char tipo[21];
         scanf("%s", tipo);
         if(strcmp(tipo, "ESTADO") == 0){
             imprimeEstado(jogo);
         } else if(strcmp(tipo, "RANKING") == 0) {
-            //imprime ranking
+            imprimeRanking(jogo);
+        } else if(strcmp(tipo, "RELATORIO") == 0){
+            imprimeRelatorioJogo(jogo);
         }
     }
 }

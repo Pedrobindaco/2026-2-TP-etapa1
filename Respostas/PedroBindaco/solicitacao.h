@@ -7,4 +7,10 @@ void imprimeJogadoresNaCasa(Jogo *jogo, int casa);
 
 void imprimeEstado(Jogo * jogo);
 
+void imprimeRanking(Jogo * jogo);
+
+void imprimeSituacao(Jogo *jogo);
+
+void imprimeRelatorioJogo(Jogo * jogo);
+
 #endif //_SOLICITACAO_H_
