@@ -10,10 +10,12 @@
 #include <string.h>
 
 int main(){
+    char proximaAcao;
     Mapa * m = criaMapa();
     cadastraMapa(m);
     Vector * jogadores = VectorConstruct();
-    cadastraJogadores(jogadores);
+    proximaAcao = cadastraJogadores(jogadores);
+    
 
 
 
