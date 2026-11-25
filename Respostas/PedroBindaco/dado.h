@@ -1,7 +1,6 @@
-
-#define FACES_DADO 4
-
-// Gerador congruente linear com semente fixa: a sequência é sempre a mesma
-static unsigned int semente = 2026;
+#ifndef _DADO_H_
+#define _DADO_H_
 
 int RolaDado();
+
+#endif // _DADO_H_

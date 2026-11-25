@@ -24,17 +24,17 @@ void cadastraMapa(Mapa * m){
             break;
         }
         if(strcmp(tipo, "OURO")== 0){
-            insereCelulaMapa(m, leOuro, executaOuro, imprimeOuro, desalocaOuro);
+            insereCelulaMapa(m, leOuro(), executaOuro, imprimeOuro, desalocaOuro);
         } else if(strcmp(tipo, "MONSTRO")== 0){
-            insereCelulaMapa(m, leMonstro, executaMonstro, imprimeMonstro, desalocaMonstro);
+            insereCelulaMapa(m, leMonstro(), executaMonstro, imprimeMonstro, desalocaMonstro);
         } else if(strcmp(tipo, "ITEM")== 0){
-            insereCelulaMapa(m, leItem, executaItem, imprimeItem, desalocaItem);
+            insereCelulaMapa(m, leItem(), executaItem, imprimeItem, desalocaItem);
         } else if(strcmp(tipo, "AVANCA")== 0){
-            insereCelulaMapa(m, leAvanca, executaAvanca, imprimeAvanca, desalocaAvanca);
+            insereCelulaMapa(m, leAvanca(), executaAvanca, imprimeAvanca, desalocaAvanca);
         } else if(strcmp(tipo, "VOLTA")== 0){
-            insereCelulaMapa(m, leVolta, executaVolta, imprimeVolta, desalocaVolta);
+            insereCelulaMapa(m, leVolta(), executaVolta, imprimeVolta, desalocaVolta);
         } else if(strcmp(tipo, "VAZIA")== 0){
-            insereCelulaMapa(m, leVazia, executaVazia, imprimeVazia, desalocaVazia);
+            insereCelulaMapa(m, leVazia(), executaVazia, imprimeVazia, desalocaVazia);
         }
 
     }
